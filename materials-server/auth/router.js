@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const authRouter = Router();
+const authRouter = Router("/auth");
 
 authRouter.post("/sign-in", (req, res) => {
   res.json({
@@ -27,4 +27,4 @@ authRouter.get("/me", (req, res) => {
   });
 });
 
-module.exports = router;
+module.exports = authRouter;
