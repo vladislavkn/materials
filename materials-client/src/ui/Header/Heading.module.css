@@ -1,0 +1,17 @@
+.heading {
+  margin: 0;
+  font-weight: 600;
+  color: #000000;
+}
+
+.h1Heading {
+  font-size: 2rem;
+}
+
+.h2Heading {
+  font-size: 1.5rem;
+}
+
+.h3Heading {
+  font-size: 1.25rem;
+}
