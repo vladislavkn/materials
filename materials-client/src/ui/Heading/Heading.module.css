@@ -15,3 +15,7 @@
 .h3Heading {
   font-size: 1.25rem;
 }
+
+.centerHeading {
+  text-align: center;
+}
