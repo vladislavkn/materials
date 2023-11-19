@@ -1,5 +1,6 @@
 import Button from "./ui/Button/Button";
-import Heading from "./ui/Header/Heading";
+import Card from "./ui/Card/Card";
+import Heading from "./ui/Heading/Heading";
 
 function App() {
   return (
@@ -10,6 +11,11 @@ function App() {
       <Button>Log in</Button>
       <Button variant="secondary">Log in</Button>
       <Button variant="text">Log in</Button>
+      <Card>
+        <Heading level="h3" center>
+          Card
+        </Heading>
+      </Card>
     </div>
   );
 }
