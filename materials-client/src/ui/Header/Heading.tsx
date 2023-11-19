@@ -8,7 +8,7 @@ export type HeadingProps = {
 } & HTMLProps<HTMLHeadingElement>;
 
 const Heading: FC<HeadingProps> = ({
-  level = "h3",
+  level = "h1",
   children,
   ...headingProps
 }) => {
