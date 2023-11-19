@@ -1,6 +1,6 @@
 const { Router } = require("express");
 
-const authRouter = Router("/auth");
+const authRouter = Router();
 
 authRouter.post("/sign-in", (req, res) => {
   res.json({
