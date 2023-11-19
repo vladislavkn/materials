@@ -1,0 +1,42 @@
+.button {
+  display: block;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-width: 1px;
+  border-style: solid;
+  transition: 0.1s;
+}
+
+.primaryButton {
+  background-color: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+
+.primaryButton:active {
+  background-color: var(--lightblue);
+}
+
+.secondaryButton {
+  background-color: var(--white);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.secondaryButton:active {
+  color: var(--lightblue);
+  border-color: var(--lightblue);
+}
+
+.textButton {
+  background-color: var(--white);
+  color: var(--blue);
+  border-color: var(--white);
+}
+
+.textButton:active {
+  color: var(--lightblue);
+}
