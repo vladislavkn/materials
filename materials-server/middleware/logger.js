@@ -3,7 +3,8 @@ const path = require("node:path");
 const { transports, format } = require("winston");
 const { logger } = require("express-winston");
 
-const logsFilepath = path.join("..", ".log");
+const logsStartTimestamp = new Date().toISOString();
+const logsFilepath = path.join("logs", `${logsStartTimestamp}.log`);
 
 const logToConsole = ({ message, level, timestamp, meta }) => {
   return [timestamp, level, meta.res.statusCode, message].join(" ");
