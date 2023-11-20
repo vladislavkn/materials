@@ -3,10 +3,11 @@
   font-weight: 400;
   margin: 0;
   padding: 0;
+  line-height: 160%
 }
 
 .bodyText {
-  color: var(--black);
+  color: var(--bodytext);
 }
 
 .errorText {
