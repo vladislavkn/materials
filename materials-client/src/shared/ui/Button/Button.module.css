@@ -23,6 +23,11 @@
   border-color: var(--lightblue);
 }
 
+.primaryButton:disabled {
+  background-color: var(--primary-disabled);
+  border-color: var(--primary-disabled);
+}
+
 .secondaryButton {
   background-color: var(--white);
   color: var(--blue);
@@ -34,6 +39,11 @@
   border-color: var(--lightblue);
 }
 
+.secondaryButton:disabled {
+  color: var(--primary-disabled);
+  border-color: var(--primary-disabled);
+}
+
 .textButton {
   background-color: var(--white);
   color: var(--blue);
@@ -42,4 +52,8 @@
 
 .textButton:active {
   color: var(--lightblue);
+}
+
+.textButton:disabled {
+  color: var(--primary-disabled);
 }
