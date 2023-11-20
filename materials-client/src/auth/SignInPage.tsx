@@ -11,13 +11,19 @@ import { selectAuthError, selectAuthLoading } from "./selectors";
 import { FieldValues } from "react-hook-form";
 
 const signInFormConfig = {
-  email: { type: "email", placeholder: "Email", required: true },
+  email: {
+    type: "email",
+    placeholder: "Email",
+    required: true,
+    autoComplete: "email",
+  },
   password: {
     type: "password",
     placeholder: "Password",
     required: true,
-    min: 8,
-    max: 16,
+    minLength: 8,
+    maxLength: 16,
+    autoComplete: "current-password",
   },
 };
 

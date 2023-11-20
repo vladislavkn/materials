@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 import Text from "../Text/Text";
 
 export type FormProps = {
-  config: Record<string, HTMLProps<HTMLInputElement>>;
+  config: Record<string, Omit<HTMLProps<HTMLInputElement>, "ref">>;
   onSubmit: (fields: FieldValues) => void;
   primaryButtonText?: string;
   actions?: ReactNode;
