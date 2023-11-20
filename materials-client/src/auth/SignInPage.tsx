@@ -2,11 +2,13 @@ import { FC } from "react";
 import Box from "ui-box";
 import Heading from "@/shared/ui/Heading/Heading";
 import Card from "@/shared/ui/Card/Card";
-import Form, { FormFields } from "@/shared/ui/Form/Form";
+import Form from "@/shared/ui/Form/Form";
 import Button from "@/shared/ui/Button/Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signIn } from "./slice";
 import { AppDispatch } from "@/store";
+import { selectAuthError, selectAuthLoading } from "./selectors";
+import { FieldValues } from "react-hook-form";
 
 const signInFormConfig = {
   email: { type: "email", placeholder: "Email", required: true },
@@ -14,13 +16,17 @@ const signInFormConfig = {
     type: "password",
     placeholder: "Password",
     required: true,
+    min: 8,
+    max: 16,
   },
 };
 
 const SignInPage: FC = () => {
+  const authError = useSelector(selectAuthError);
+  const loading = useSelector(selectAuthLoading);
   const dispatch: AppDispatch = useDispatch();
 
-  const onSubmit = (fields: FormFields) => {
+  const onSubmit = (fields: FieldValues) => {
     dispatch(
       signIn({
         email: fields.email as string,
@@ -42,6 +48,8 @@ const SignInPage: FC = () => {
           config={signInFormConfig}
           onSubmit={onSubmit}
           actions={<Button variant="secondary">Sign up instead</Button>}
+          errorMessage={authError}
+          loading={loading}
         />
       </Card>
     </Box>

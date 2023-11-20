@@ -1,57 +1,43 @@
-import { FC, HTMLProps, ReactNode, useState } from "react";
+import { FC, HTMLProps, ReactNode } from "react";
 import Field from "../Field/Field";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import styles from "./Form.module.css";
 import Button from "../Button/Button";
 import Text from "../Text/Text";
 
-export type FormFields = Record<string, string | number>;
-type ValidationError = string | undefined;
-
 export type FormProps = {
   config: Record<string, HTMLProps<HTMLInputElement>>;
-  onSubmit: (fields: FormFields) => void;
-  validate?: (fields: FormFields) => ValidationError;
+  onSubmit: (fields: FieldValues) => void;
   primaryButtonText?: string;
   actions?: ReactNode;
+  errorMessage?: string | null;
+  loading?: boolean;
 };
 
 const Form: FC<FormProps> = ({
   config,
-  validate,
   onSubmit,
-  primaryButtonText = "Submit",
   actions,
+  errorMessage,
+  primaryButtonText = "Submit",
+  loading = false,
 }) => {
   const { register, handleSubmit } = useForm();
-  const [validationError, setValidationError] =
-    useState<ValidationError>(undefined);
-
-  const onSubmitWithValidation = (fields: FormFields) => {
-    if (validate) {
-      const validationResult = validate(fields);
-      setValidationError(validationResult);
-      if (validationResult) {
-        return;
-      }
-    }
-
-    onSubmit(fields);
-  };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmitWithValidation)}
-      className={styles.form}
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       {Object.entries(config).map(([name, options]) => (
         <Field key={name} {...options} {...register(name)} />
       ))}
       <div className={styles.formActions}>
         {actions}
-        <Button type="submit">{primaryButtonText}</Button>
+        <Button disabled={loading} type="submit">
+          {primaryButtonText}
+        </Button>
       </div>
-      {validationError && <Text variant="error">{validationError}</Text>}
+      <div className={styles.formErrors}>
+        {errorMessage && <Text variant="error">{errorMessage}</Text>}
+      </div>
     </form>
   );
 };

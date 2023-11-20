@@ -12,3 +12,8 @@
   align-items: center;
   gap: 1.25rem;
 }
+
+.formErrors {
+  display: flex;
+  justify-content: flex-end;
+}
