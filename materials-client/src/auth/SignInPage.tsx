@@ -6,6 +6,7 @@ import Form, { FormFields } from "@/shared/ui/Form/Form";
 import Button from "@/shared/ui/Button/Button";
 import { useDispatch } from "react-redux";
 import { signIn } from "./slice";
+import { AppDispatch } from "@/store";
 
 const signInFormConfig = {
   email: { type: "email", placeholder: "Email", required: true },
@@ -17,7 +18,7 @@ const signInFormConfig = {
 };
 
 const SignInPage: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   const onSubmit = (fields: FormFields) => {
     dispatch(
