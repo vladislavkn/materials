@@ -5,7 +5,7 @@ import styles from "./Form.module.css";
 import Button from "../Button/Button";
 import Text from "../Text/Text";
 
-type FormFields = Record<string, string | number>;
+export type FormFields = Record<string, string | number>;
 type ValidationError = string | undefined;
 
 export type FormProps = {
