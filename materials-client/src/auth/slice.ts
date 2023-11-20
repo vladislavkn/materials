@@ -93,6 +93,7 @@ const authSlice = createSlice<
         getAuthOnLoad.rejected
       ),
       (state, { error }) => {
+        state.loading = false;
         state.error = error.message ?? "Some error occured";
       }
     );
@@ -104,6 +105,7 @@ const authSlice = createSlice<
         signOut.fulfilled
       ),
       (state, { payload }) => {
+        state.loading = false;
         state.user = payload;
       }
     );
