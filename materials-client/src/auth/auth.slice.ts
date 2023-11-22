@@ -35,7 +35,7 @@ export const signOut = createAsyncThunk("auth/sign-out", async () => {
   return null;
 });
 
-export const getAuthOnLoad = createAsyncThunk(
+export const signInOnLoad = createAsyncThunk(
   "auth/get-auth-on-load",
   async (_, { dispatch }) => {
     const savedUser = localStorageUserAPI.getUser();
@@ -79,7 +79,7 @@ const authSlice = createSlice<
         signIn.pending,
         signOut.pending,
         signUp.pending,
-        getAuthOnLoad.pending
+        signInOnLoad.pending
       ),
       (state) => {
         state.loading = true;
@@ -90,7 +90,7 @@ const authSlice = createSlice<
         signIn.rejected,
         signOut.rejected,
         signUp.rejected,
-        getAuthOnLoad.rejected
+        signInOnLoad.rejected
       ),
       (state, { error }) => {
         state.loading = false;
@@ -101,7 +101,7 @@ const authSlice = createSlice<
       isAnyOf(
         signIn.fulfilled,
         signUp.fulfilled,
-        getAuthOnLoad.fulfilled,
+        signInOnLoad.fulfilled,
         signOut.fulfilled
       ),
       (state, { payload }) => {
