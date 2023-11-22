@@ -1,0 +1,36 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.layoutWithSidebar {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+
+.sidebar {
+  flex-grow: 1;
+  max-width: 20rem;
+  background-color: var(--white);
+  border-right: 1px solid var(--lightgrey);
+}
+
+.content { 
+  display: flex;
+  flex-grow: 1;
+  padding: 2rem;
+  align-items: center;  
+  justify-content: center;
+}
+
+.contentWithSidebar { 
+  align-items: flex-start;  
+  justify-content: flex-start;
+}
+
+.toolbar {
+  padding: 2rem;
+  flex-shrink: 1;
+}

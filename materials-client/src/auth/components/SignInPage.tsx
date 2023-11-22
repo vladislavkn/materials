@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Box from "ui-box";
 import Heading from "@/shared/ui/Heading/Heading";
 import Card from "@/shared/ui/Card/Card";
 import Form from "@/shared/ui/Form/Form";
@@ -9,6 +8,7 @@ import { signIn } from "../auth.slice";
 import { AppDispatch } from "@/store";
 import { selectAuthError, selectAuthLoading } from "../auth.selectors";
 import { FieldValues } from "react-hook-form";
+import Layout from "@/shared/ui/Layout/Layout";
 
 const signInFormConfig = {
   email: {
@@ -42,13 +42,7 @@ const SignInPage: FC = () => {
   };
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      minHeight="100vh"
-      paddingX="1rem"
-    >
+    <Layout>
       <Card>
         <Heading center>Sign in</Heading>
         <Form
@@ -59,7 +53,7 @@ const SignInPage: FC = () => {
           loading={loading}
         />
       </Card>
-    </Box>
+    </Layout>
   );
 };
 

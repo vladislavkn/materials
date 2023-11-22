@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-import Box from "ui-box";
 import Heading from "@/shared/ui/Heading/Heading";
 import Card from "@/shared/ui/Card/Card";
 import Form from "@/shared/ui/Form/Form";
@@ -10,6 +9,7 @@ import { AppDispatch } from "@/store";
 import { selectAuthError, selectAuthLoading } from "../auth.selectors";
 import { FieldValues } from "react-hook-form";
 import { SignUpDTO } from "../auth.types";
+import Layout from "@/shared/ui/Layout/Layout";
 
 const signUpFormConfig = {
   email: {
@@ -68,13 +68,7 @@ const SignUpPage: FC = () => {
   };
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      minHeight="100vh"
-      paddingX="1rem"
-    >
+    <Layout>
       <Card>
         <Heading center>Sign up</Heading>
         <Form
@@ -85,7 +79,7 @@ const SignUpPage: FC = () => {
           loading={loading}
         />
       </Card>
-    </Box>
+    </Layout>
   );
 };
 
