@@ -44,10 +44,8 @@ export const signInOnLoad = createAsyncThunk(
     try {
       return API.getSignedInUser();
     } catch (e) {
-      if ((e as AxiosError).status === 401) {
-        return null;
-      }
-      throw e;
+      console.error(e);
+      return null;
     }
   }
 );
