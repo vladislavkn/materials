@@ -14,12 +14,21 @@
   --black: #000000;
   --error: #ef3b7d;
   --bodytext: #333333;
+  --background: #FCFCFC;
 }
 
 * {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0;
+}
+
+html, body, #root {
+  height: 100%;
 }

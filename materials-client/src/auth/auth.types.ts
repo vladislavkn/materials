@@ -6,3 +6,8 @@ export type SignInDTO = {
 export type SignUpDTO = SignInDTO & {
   passwordRepeat: string;
 };
+
+export type User = {
+  email: string;
+  id: number;
+};

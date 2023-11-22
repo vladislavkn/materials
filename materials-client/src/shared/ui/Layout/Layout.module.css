@@ -1,6 +1,6 @@
 .layout {
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
   flex-direction: column;
 }
 
@@ -10,10 +10,31 @@
 }
 
 .sidebar {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   max-width: 20rem;
   background-color: var(--white);
   border-right: 1px solid var(--lightgrey);
+}
+
+.sidebarContent {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--lightgrey);
+}
+
+.sidebarTitle {
+  padding:0 2rem;
+}
+
+.sidebarActions {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .content { 
@@ -22,6 +43,7 @@
   padding: 2rem;
   align-items: center;  
   justify-content: center;
+  background-color: var(--background);
 }
 
 .contentWithSidebar { 

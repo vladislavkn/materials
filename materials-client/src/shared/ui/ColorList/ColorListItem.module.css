@@ -1,0 +1,27 @@
+.colorListItem {
+  padding: 1rem 2rem;
+  transition: 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.colorListItem:active, .colorListItemActive {
+  background-color: var(--lightgrey);
+}
+
+.colorRound {
+  width: 0.75rem;
+  height: 0.75rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.title {
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1.125rem;
+  color: var(--black);
+}

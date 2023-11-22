@@ -6,6 +6,7 @@ import {
 } from "./shared/constants";
 import { SignInPage, SignUpPage } from "./auth";
 import { MaterialsPage } from "./materials";
+import Text from "./shared/ui/Text/Text";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,12 @@ const router = createBrowserRouter([
   {
     path: ROUTE_MATERIALS,
     element: <MaterialsPage />,
+    children: [
+      {
+        index: true,
+        element: <Text variant="muted">No material selected</Text>,
+      },
+    ],
   },
 ]);
 
