@@ -9,7 +9,6 @@
   align-items: stretch;
 }
 
-
 .sidebar {
   flex-grow: 1;
   max-width: 20rem;

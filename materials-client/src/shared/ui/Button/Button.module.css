@@ -48,6 +48,8 @@
   background-color: var(--white);
   color: var(--blue);
   border-color: var(--white);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .textButton:active {
