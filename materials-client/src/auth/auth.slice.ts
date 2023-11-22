@@ -5,10 +5,10 @@ import {
   PayloadAction,
   isAnyOf,
 } from "@reduxjs/toolkit";
-import API from "./api";
+import API from "./auth.api";
 import { User } from "@/shared/types";
-import { SignInDTO, SignUpDTO } from "./types";
-import localStorageUserAPI from "./localStorageUserApi";
+import { SignInDTO, SignUpDTO } from "./auth.types";
+import localStorageUserAPI from "./auth.localStorageUserApi";
 import { AxiosError } from "axios";
 
 export const signIn = createAsyncThunk<User, SignInDTO>(

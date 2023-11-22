@@ -1,6 +1,6 @@
 import http from "@/shared/http";
 import { User } from "@/shared/types";
-import { SignInDTO, SignUpDTO } from "./types";
+import { SignInDTO, SignUpDTO } from "./auth.types";
 
 const signIn = (dto: SignInDTO) =>
   http.post<User>("/auth/sign-in", dto).then((response) => response.data);

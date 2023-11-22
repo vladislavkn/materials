@@ -5,9 +5,9 @@ import Card from "@/shared/ui/Card/Card";
 import Form from "@/shared/ui/Form/Form";
 import Button from "@/shared/ui/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { signIn } from "./slice";
+import { signIn } from "../auth.slice";
 import { AppDispatch } from "@/store";
-import { selectAuthError, selectAuthLoading } from "./selectors";
+import { selectAuthError, selectAuthLoading } from "../auth.selectors";
 import { FieldValues } from "react-hook-form";
 
 const signInFormConfig = {
@@ -47,6 +47,7 @@ const SignInPage: FC = () => {
       alignItems="center"
       justifyContent="center"
       minHeight="100vh"
+      paddingX="1rem"
     >
       <Card>
         <Heading center>Sign in</Heading>
